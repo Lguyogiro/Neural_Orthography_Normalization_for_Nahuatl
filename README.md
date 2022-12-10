@@ -58,3 +58,6 @@ I ran four total experiments:
 | MTT_orig      | 0.97  | 0.88       |
 | xtra_spa      | 0.97  | 0.89      |
 | MTT_xtra_spa      | 0.97  |**0.9**      |
+
+### Analysis and Concluding Remarks
+Using only the original data, multi-task training didn't have much effect. This could likely be due to the label skew in the data, sicne only 15% of the words are Spanish. When adding the extra Spanish words, the classification-based multi-task training method improved the accuracy on Spanish words by 2 percentage points with only a 1-point drop in overall accuracy comparing to the original experiment (no MTT, no extra data). 
