@@ -1,5 +1,9 @@
 # Neural orthographic conversion and normalization for Western Sierra Puebla Nahuatl with special attention to Spanish words.
 
+To run an experiment:
+`cd scripts`
+`python train.py -m -s` where -m is for running the multitask experiment, and -s means "use supplementary spanish data",
+
 ### Intro & Background
 This project addresses dealing with varying orthographic norms in written Nahuatl using a sequence-to-sequence neural network model.
 Its motivations stem from the creation of the Universal Dependencies treebank for Western Sierra Puebla Nahuatl, a corpus where all of the 
