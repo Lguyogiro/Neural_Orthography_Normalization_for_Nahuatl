@@ -16,10 +16,10 @@ About 15% of the words in the UD treebank can be classified as "Spanish", whethe
 I attempted to build a neural network model capable of taking input from any latin-alphabet-based Nahuatl orthography (though in practice this just means any orthography represented in our data), and 
 convert it to any of the 4 proposed writing "standards" for Nahuatl:
 
-a. INALI (proposed by the National Institute of Indigenous Languages in Mexico),
-b. SEP (proposed and used by the Secretary of Education for Nahuatl materials),
-c. ILV (orthography used and promoted by the Summer Institute of Linguistics),
-d. ACK (an orthography based on colonial era practices, developed by three contemporary Nahuatl scholars: Andrews, Campbell, and Karttunen).
+- INALI (proposed by the National Institute of Indigenous Languages in Mexico),
+- SEP (proposed and used by the Secretary of Education for Nahuatl materials),
+- ILV (orthography used and promoted by the Summer Institute of Linguistics),
+- ACK (an orthography based on colonial era practices, developed by three contemporary Nahuatl scholars: Andrews, Campbell, and Karttunen).
 
 Furthermore, I wanted my system to preserve the Spanish orthography for Spanish words, regardless of the desired output orthography (thus, "pues" does not change to "pwes" when converting to INALI orthography).
 
