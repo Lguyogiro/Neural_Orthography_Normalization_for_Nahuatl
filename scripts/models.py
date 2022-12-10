@@ -129,10 +129,17 @@ class Seq2SeqMultiTask(nn.Module):
         super().__init__()
         
         self.encoder = encoder
-        self.classification_layer = nn.Linear(self.encoder.fc.out_features, 1)
+        self.classification_layer1 = nn.Linear(self.encoder.fc.out_features, 256)
+        self.classification_layer2 = nn.Linear(256, 1)
+        self.dropout = nn.Dropout(0.25)
+        self.relu = nn.ReLU()
 
         self.decoder = decoder
         self.device = device
+        
+    def call_classifier(self, inp):
+        x = self.relu(self.classification_layer1(inp))
+        return self.classification_layer2(x)
         
     def forward(self, src, trg, teacher_forcing_ratio = 0.25):
         batch_size = src.shape[1]
@@ -145,7 +152,7 @@ class Seq2SeqMultiTask(nn.Module):
         #encoder_outputs is all hidden states of the input sequence, back and forwards
         #hidden is the final forward and backward hidden states, passed through a linear layer
         encoder_outputs, hidden = self.encoder(src)
-        lang_id_pred = self.classification_layer(hidden)
+        lang_id_pred = self.call_classifier(hidden)
                 
         #first input to the decoder is the <sos> tokens
         input = trg[0,:]

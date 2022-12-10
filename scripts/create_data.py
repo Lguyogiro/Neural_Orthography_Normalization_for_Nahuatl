@@ -36,7 +36,7 @@ for i, row in master_data.iterrows():
                               "lang": lang})
     
     output_df = pd.DataFrame(word_rows, columns=["input", "target", "lang"])
-    output_df.to_csv("all_normalization_data.csv", index=False)
+    output_df.to_csv("../data/all_normalization_data.csv", index=False)
         
 #
 # Data for multiword/sentence level training
